@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="form-floating mt-5 mb-3">
+        <input type="text" class="form-control"
+               id="floatingInputMarca" placeholder="Marca" [(ngModel)]="marca" disabled>
+        <label for="floatingInputMarca">Marca</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control"
+               id="floatingInputModelo" placeholder="Modelo" [(ngModel)]="modelo" disabled>
+        <label for="floatingInputModelo">Modelo</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control"
+               id="floatingInputPotenciaMotor" placeholder="Potencia del motor" [(ngModel)]="potencia_motor" disabled>
+        <label for="floatingInputPotenciaMotor">Potencia del motor</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <div>
+          <label for="selectCategoria">Categoría</label>
+        </div>
+        <div>
+          <select class="form-select" id="selectCategoria" [(ngModel)]="categoria" disabled>
+            <option value="sedan">sedan</option>
+            <option value="suv">suv</option>
+            <option value="camioneta">camioneta</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInputPrecioVenta"
+               placeholder="Precio de venta" [(ngModel)]="precio_venta" [disabled]="!isEditable('precio_venta')">
+        <label for="floatingInputPrecioVenta">Precio de venta</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInputUnidadesStock"
+               placeholder="Unidades en stock" [(ngModel)]="unidades_en_stock" [disabled]="!isEditable('unidades_en_stock')">
+        <label for="floatingInputUnidadesStock">Unidades en stock</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInputStockMinimo"
+               placeholder="Stock mínimo" [(ngModel)]="stock_minimo" [disabled]="!isEditable('stock_minimo')">
+        <label for="floatingInputStockMinimo">Stock mínimo</label>
+      </div>
+
+      <div class="form-floating mb-2">
+        <div>
+          <label for="selectEstado">Estado</label>
+        </div>
+        <div>
+          <select class="form-select" id="selectEstado" [(ngModel)]="estado" [disabled]="!isEditable('estado')">
+            <option value="activo">activo</option>
+            <option value="dado de baja">dado de baja</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-floating mb-2">
+        <input type="text" class="form-control" id="floatingInputAnioFabricacion"
+               placeholder="Año de fabricación" [(ngModel)]="anio_fabricacion" disabled>
+        <label for="floatingInputAnioFabricacion">Año de fabricación</label>
+      </div>
+      <button class="btn btn-primary" (click)="actualizarAuto()">Actualizar</button>
+    </div>
+  </div>
+</div>

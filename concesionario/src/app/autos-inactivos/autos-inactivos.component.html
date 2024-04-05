@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h2>Autos dados de baja</h2>
+  <h2>Número de Autos: ({{ getNumeroAutos() }})</h2>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Potencia del motor</th>
+      <th>Categoría</th>
+      <th>Precio de venta</th>
+      <th>Unidades en stock</th>
+      <th>Stock mínimo</th>
+      <th>Estado</th>
+      <th>Año de fabricación</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let auto of autos">
+      <td>{{ auto.marca }}</td>
+      <td>{{ auto.modelo }}</td>
+      <td>{{ auto.potencia_motor }}</td>
+      <td>{{ auto.categoria }}</td>
+      <td>{{ auto.precio_venta | currency }}</td>
+      <td>{{ auto.unidades_en_stock }}</td>
+      <td>{{ auto.stock_minimo }}</td>
+      <td>{{ auto.estado }}</td>
+      <td>{{ auto.anio_fabricacion }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="redirectToMostrarAuto(auto.id)">Actualizar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

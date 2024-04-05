@@ -1,0 +1,24 @@
+create database concesionario;
+
+USE concesionario;
+
+create table auto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    marca VARCHAR(255) NOT NULL,
+    modelo VARCHAR(255) NOT NULL,
+    potencia_motor INT NOT NULL,
+    categoria ENUM('sedan', 'suv', 'camioneta') NOT NULL,
+    precio_venta DECIMAL(10, 2) NOT NULL,
+    unidades_en_stock INT NOT NULL,
+    stock_minimo INT NOT NULL,
+    estado ENUM('activo', 'dado de baja') NOT NULL,
+    anio_fabricacion INT NOT NULL
+);
+
+INSERT INTO auto (marca, modelo, potencia_motor, categoria, precio_venta, unidades_en_stock, stock_minimo, estado, anio_fabricacion)
+VALUES
+('Toydfota', 'df', 150, 'sedan', 2323.00, 10, 5, 'activo', 2022),
+('Ford', 'Escape', 180, 'suv', 30000.00, 8, 4, 'activo', 2021),
+('Chevrolet', 'Silverado', 250, 'camioneta', 40000.00, 15, 8, 'activo', 2023);
+
+select * from auto
